@@ -1,0 +1,71 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[lmargin=2.5cm,rmargin=2.5cm,tmargin=2.5cm,bmargin=2.5cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{phonetic} % for esh
+\usepackage{enumerate}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+\newcommand{\Red}{\Re}
+\newcommand{\Cored}{\Im}
+\newcommand{\Wat}{\&}
+\newcommand{\shape}{\ensuremath{\mathord{\raisebox{0.5pt}{\text{\rm\esh}}}}}
+\newcommand{\submodality}{\rotatebox[origin=c]{90}{$\subset$}}
+
+\setlength{\parindent}{0cm}
+\begin{document}
+
+\subsection*{Differential Cohesive Homotopy Type Theory}
+
+\emph{Group members: Jacob A.\ Gross, Max New, Jennifer Paykin, Mitchell Riley, Felix Wellen} \\
+\emph{Group advisors: Dan Licata, Mike Shulman} \\
+
+Homotopy Type Theory has the intriguing feature that theorems and constructions done in this formal language
+may be transported to a wide variety of categories, including $(\infty,1)$-toposes.
+For this project, we want to extend the internal language of type theory to other toposes of interest to differential and algebraic geometry. In order to do so, plain homotopy type theory is not sufficient, since the differential geometric structure 
+is not accessible internally without making changes to the type theory.
+
+These toposes with additional structure, called differential cohesive $(\infty,1)$-toposes, have been used by Urs Schreiber to treat spaces of interest to modern physics
+and are sufficiently abstract to admit an internal, type theoretic characterization. 
+A differential cohesive $(\infty,1)$-topos is an $(\infty,1)$-topos with six endofunctors that are adjoint as indicated in the following diagram,
+where the functors alternate from left to right between being coreflections and reflections.
+\begin{center}
+  \begin{tikzpicture}[node distance=2cm]
+    \node (R) {$\Red$};
+    \node[right of=R] (I) {$\Cored$};
+    \node[right of=I] (E) {$\Wat$};
+    \node[below of=I, node distance=1.6cm] (S) {$\shape$};
+    \node[below of=E, node distance=1.6cm] (b) {$\flat$};
+    \node[right of=b] (s) {$\sharp$};
+  
+    \path (R) to node {$\vdash$} (I);
+    \path (I) to node {$\vdash$} (E);
+    \path (S) to node {$\vdash$} (b);
+    \path (b) to node {$\vdash$} (s);
+
+    \path (I) to node {$\submodality$} (S);
+    \path (E) to node {$\submodality$} (b);
+  \end{tikzpicture}
+\end{center}
+The inclusion symbols in the diagram indicate an inclusion of two of the four subtoposes these functors reflect into.
+On the type theoretic side, the subtoposes correspond to the concept of modalities.
+There is a general construction for non-dependent modal type theories, developed by Dan Licata, Mike Shulman and Mitchell Riley. 
+In his paper on Brouwer's Fixed-point Theorem and Real-Cohesion, Mike Shulman constructs a variant of Homotopy Type Theory, 
+realizing a special case of the structure above given by just the second row of the diagram.
+
+The MRC group built on this previous work to construct type theories partially solving the problem of constructing a variant of Homotopy Type Theory
+supporting internal versions of all the operations of a differential cohesive $(\infty,1)$-topos.
+
+The group started by familiarising everyone with a basic example of a differential cohesive topos. 
+A first type theory supporting the operations $\flat$ and $\Wat$ was constructed to investigate how the two levels interact.
+Then, to get some sense for a modal type theory given by an adjoint triple, a type theory for the second row of operations was constructed.
+This type theory, as well as its successor, the type theory for the upper row, has two modes corresponding to the two subtoposes which the adjoint triple reflects into. 
+Both theories were constructed using the machinery developed by Licata, Shulman and Riley, and therefore do not support dependent types out of the box.
+By the same approach, finally, a modal type theory supporting all the operations of a differential cohesive topos with five modes was constructed.
+Future work will extend the combined type theory, supporting all six functors, to support dependent and identity types.
+
+\end{document}
