@@ -158,5 +158,24 @@ data Term (c : Ctx) : Type → Set where
 ♭ℑ-is-♭-inv : ∀ {A} → Term [ · ∣ · ∣ [ ♭ A ] ∣ · ∣ · ] (♭ (ℑ A))
 ♭ℑ-is-♭-inv = ♭E (ℜvar zero) (♭I (ℑI (♭var zero)))
 
+♯ℜ-is-♯ : ∀ {A} → Term [ · ∣ · ∣ [ ♯ (ℜ A) ] ∣ · ∣ · ] (♯ A)
+♯ℜ-is-♯ = ♯I (ℜE {z = C} (♯E (♭var zero)) (♭var zero))
+
+♯ℜ-is-♯-inv : ∀ {A} → Term [ · ∣ · ∣ [ ♯ A ] ∣ · ∣ · ] (♯ (ℜ A))
+♯ℜ-is-♯-inv = ♯I (ℜI (♯E (♭var zero)))
+
+ℜ♯-is-♯ : ∀ {A} → Term [ · ∣ · ∣ [ ℜ (♯ A) ] ∣ · ∣ · ] (♯ A)
+ℜ♯-is-♯ = ℜED (var zero) (ℜvar zero)
+
+ℜ♯-is-♯-inv : ∀ {A} → Term [ · ∣ · ∣ [ ♯ A ] ∣ · ∣ · ] (ℜ (♯ A))
+ℜ♯-is-♯-inv = ℜI (♯I (♯E (♭var zero)))
+
+ℜ∫-is-∫ : ∀ {A} → Term [ · ∣ · ∣ [ ℜ (∫ A) ] ∣ · ∣ · ] (∫ A)
+ℜ∫-is-∫ = ℜED (var zero) (ℜvar zero)
+
+ℜ∫-is-∫-inv : ∀ {A} → Term [ · ∣ · ∣ [ ∫ A ] ∣ · ∣ · ] (ℜ (∫ A))
+ℜ∫-is-∫-inv = ∫E (ℜvar zero) (ℜI (∫I (ℜvar (suc zero))))
+
+
 adm1 : ∀ {A B} → Term [ · ∣ [ A ] ∣ · ∣ · ∣ · ] B → Term [ [ A ] ∣ · ∣ · ∣ · ∣ · ] B
 adm1 f = ℜED (ℜI (♭var zero)) {! wk f!}
