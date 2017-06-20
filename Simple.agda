@@ -63,7 +63,7 @@ data Term (c : Ctx) : Type → Set where
   &E   : ∀ {τ} → Term [ Γ c ∣ (Δ c ++ Θ c ++ Λ c) ∣ · ∣ · ∣ Ξ c ] (& τ) → Term c τ
 
   ∫I   : ∀ {τ} → Term [ Γ c ∣ (Δ c ++ Θ c ++ Λ c ++ Ξ c) ∣ · ∣ · ∣ · ] τ → Term c (∫ τ)
-  ∫E   : ∀ {A B} → Term [ (Γ c ++ Δ c ++ Θ c ++ Λ c ++ Ξ c) ∣ · ∣ · ∣ · ∣ · ] (∫ A) → Term (appendZone S A c) B → Term c B
+  ∫E   : ∀ {A B} → Term [ (Γ c) ∣ ( Δ c ++ Θ c ++ Λ c ++ Ξ c) ∣ · ∣ · ∣ · ] (∫ A) → Term (appendZone S A c) B → Term c B
 
   ♭I   : ∀ {τ} → Term [ Γ c ∣ · ∣ · ∣ · ∣ (Δ c ++ Θ c ++ Λ c ++ Ξ c) ] τ → Term c (♭ τ)
   ♭E   : ∀ {A B} → Term [ Γ c ∣ (Δ c ++ Θ c ++ Λ c ++ Ξ c) ∣ · ∣ · ∣ · ] (♭ A) → Term (appendZone C A c) B → Term c B
@@ -114,7 +114,7 @@ data Term (c : Ctx) : Type → Set where
 ∫-idem = ∫-unit
 
 ∫-idem-inv : ∀ {A} → Term [ · ∣ · ∣ [ ∫ (∫ A) ] ∣ · ∣ · ] (∫ A)
-∫-idem-inv = ∫E (♭var zero) (∫E (♭var (suc zero)) (∫I (ℜvar (suc zero))))
+∫-idem-inv = ∫E (ℜvar zero) (∫E ((ℜvar (suc zero))) (∫I ((ℜvar (suc zero)))))
 
 ♭-counit : ∀ {A} → Term [ · ∣ · ∣ [ ♭ A ] ∣ · ∣ · ] A
 ♭-counit = ♭E (ℜvar zero) (♭var zero)
@@ -157,7 +157,6 @@ data Term (c : Ctx) : Type → Set where
 
 ♭ℑ-is-♭-inv : ∀ {A} → Term [ · ∣ · ∣ [ ♭ A ] ∣ · ∣ · ] (♭ (ℑ A))
 ♭ℑ-is-♭-inv = ♭E (ℜvar zero) (♭I (ℑI (♭var zero)))
-
 
 adm1 : ∀ {A B} → Term [ · ∣ [ A ] ∣ · ∣ · ∣ · ] B → Term [ [ A ] ∣ · ∣ · ∣ · ∣ · ] B
 adm1 f = ℜED (ℜI (♭var zero)) {! wk f!}
