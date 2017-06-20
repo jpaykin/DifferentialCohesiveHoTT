@@ -134,5 +134,30 @@ data Term (c : Ctx) : Type → Set where
 ♯-idem-inv : ∀ {A} → Term [ · ∣ · ∣ [ ♯ A ] ∣ · ∣ · ] (♯ (♯ A))
 ♯-idem-inv = ♯-unit
 
+ℜ♭-is-♭ : ∀ {A} → Term [ · ∣ · ∣ [ ℜ (♭ A) ] ∣ · ∣ · ] (♭ A)
+ℜ♭-is-♭ = ℜED (var zero) (ℜvar zero)
+
+ℜ♭-is-♭-inv : ∀ {A} → Term [ · ∣ · ∣ [ ♭ A ] ∣ · ∣ · ] (ℜ (♭ A))
+ℜ♭-is-♭-inv = ♭E (ℜvar zero) (ℜI (♭I (♭var zero)))
+
+♭ℜ-is-♭ : ∀ {A} → Term [ · ∣ · ∣ [ ♭ (ℜ A) ] ∣ · ∣ · ] (♭ A)
+♭ℜ-is-♭ = ♭E (ℜvar zero) (ℜE {z = C} (♭var zero) (♭I (♭var zero)))
+
+♭ℜ-is-♭-inv : ∀ {A} → Term [ · ∣ · ∣ [ ♭ A ] ∣ · ∣ · ] (♭ (ℜ A))
+♭ℜ-is-♭-inv = ♭E (ℜvar zero) (♭I (ℜI (♭var zero)))
+
+ℑ♭-is-♭ : ∀ {A} → Term [ · ∣ · ∣ [ ℑ (♭ A) ] ∣ · ∣ · ] (♭ A)
+ℑ♭-is-♭ = ℑED (var zero) (♭E (ℜvar (suc zero)) (♭I (♭var zero)))
+
+ℑ♭-is-♭-inv : ∀ {A} → Term [ · ∣ · ∣ [ ♭ A ] ∣ · ∣ · ] (ℑ (♭ A))
+ℑ♭-is-♭-inv = ♭E (ℜvar zero) (ℑI (ℜvar zero))
+
+♭ℑ-is-♭ : ∀ {A} → Term [ · ∣ · ∣ [ ♭ (ℑ A) ] ∣ · ∣ · ] (♭ A)
+♭ℑ-is-♭ = ♭E (ℜvar zero) (ℑE {z = C} (♭var zero) (♭I (♭var zero)))
+
+♭ℑ-is-♭-inv : ∀ {A} → Term [ · ∣ · ∣ [ ♭ A ] ∣ · ∣ · ] (♭ (ℑ A))
+♭ℑ-is-♭-inv = ♭E (ℜvar zero) (♭I (ℑI (♭var zero)))
+
+
 adm1 : ∀ {A B} → Term [ · ∣ [ A ] ∣ · ∣ · ∣ · ] B → Term [ [ A ] ∣ · ∣ · ∣ · ∣ · ] B
 adm1 f = ℜED (ℜI (♭var zero)) {! wk f!}
