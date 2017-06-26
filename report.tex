@@ -42,10 +42,10 @@ where the functors alternate from left to right between being coreflections and 
     \node[below of=E, node distance=1.6cm] (b) {$\flat$};
     \node[right of=b] (s) {$\sharp$};
   
-    \path (R) to node {$\vdash$} (I);
-    \path (I) to node {$\vdash$} (E);
-    \path (S) to node {$\vdash$} (b);
-    \path (b) to node {$\vdash$} (s);
+    \path (R) to node {$\dashv$} (I);
+    \path (I) to node {$\dashv$} (E);
+    \path (S) to node {$\dashv$} (b);
+    \path (b) to node {$\dashv$} (s);
 
     \path (I) to node {$\submodality$} (S);
     \path (E) to node {$\submodality$} (b);
