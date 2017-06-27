@@ -3,3 +3,10 @@
 *.log
 #*#
 *~
+*.bbl
+*.blg
+*.dvi
+*.fdb_latexmk
+*.fls
+*.out
+*.xdv
