@@ -98,7 +98,7 @@ his more specific version of cohesion, where $\shape$ is defined as localization
 So I removed ``real'' on some instances.}
 Differential cohesive toposes, used in \citet{Schreiber2013} 
 to reason about spaces with geometric structures of interest to modern physics,
-have already been explored from within a type theory in \citeauthor{Wellen2017}.
+have already been explored from within a type theory in \citet{Wellen2017}.
 There, just a small fragment of differential cohesive type theory is used to define and 
 use notions of differential geometry, namely the $\Cored$ modality, which -- contrary to other parts of differential cohesion -- 
 may be added to Homotopy Type Theory by postulating axioms. 
@@ -114,7 +114,18 @@ this type theory to dependent and identity types.
 
 \section{Cohesion in adjoint type theory}
 
-\todo{start with cohesion}
+In \citet{Shulman2015} a variant of Homotopy Type Theory supporting the cohesive triple is given,
+where the $\shape$ functor is defined as a localization using the Dedekind-reals. 
+While this construction admits very useful constructions of familiar topological spaces using the real number, 
+like the \emph{topological} spheres or disks which have the right homotopy type, 
+it is also interesting to look at general cohesion, where $\shape$ is not a priori linked to the Dedekind-reals.
+
+For differential cohesion there even is no known way of mimicing Shulman's construction:
+In typical models of differential cohesion the Dedekind-reals do not correspond to the real line as a smooth space!
+Furthermore, it is not known, if there is a way to define the correct real line internally.
+Therefore, this work starts by giving rules for a type theory similar to Shulman's, 
+where the $\shape$ is given by rules instead of being defined.
+\todo{provide more type theory details}
 
 \section{Differential cohesion in adjoint type theory}
 
