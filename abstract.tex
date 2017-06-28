@@ -36,18 +36,24 @@
   comments, \eg when submitting, uncomment the \texttt{draftfalse}
   command in this document.}
 
-The internal language of a type theory allows mathematicians to reason
+Internal languages \FW{I do not know, if Type Theories themselves have internal language, 
+as I understand the notion ``internal language'', some Type Theories \emph{are} internal languages \emph{of} special categories.
+So I changed this sentence... Great comment-function ;-)} 
+ that allow mathematicians to reason
 \emph{synthetically} about mathematical structures. While Homotopy Type Theory
 provides an internal language for $(\infty,1)$-toposes, it is also possible to
-consider type theories that correspond to other structures. In previous work,
-\citet{Shulman2015} and \citet{Licata2016} construct a type theory for
-$(\infty,1)$-toposes with an additional ``cohesive'' structure mirroring cohesion of
-topological spaces. In this setting, derivations in the type theory correspond
+consider Type Theories that correspond to $(\infty,1)$-toposes with extra structure
+of interest in Algebraic and Differential Geometry. 
+
+In previous work,
+\citet{Shulman2015} constructs a type theory for
+$(\infty,1)$-toposes with an additional ``cohesive'' structure.
+In this setting, derivations in the type theory correspond
 to continuous maps that respect the cohesive structure of the space, which
 allows for a synthetic proof of, for example, Brower's fixed-point theorem,
 which states that all continuous maps over the topological disk have a fixed
-point~\citep{Shulman2015}. This theorem has no synthetic proof in ordinary
-homotopy type theory.
+point~\citep{Shulman2015}. 
+This theorem has no synthetic proof in ordinary homotopy type theory.
 
 To capture cohesion in the type theory, \citep{Shulman2015} and
 \citep{Licata2016} use \emph{modal} type theories~\tocite{pfenning and davis?}
@@ -85,24 +91,29 @@ shown in black in \cref{fig:modalities}. \todo{say more about the type theory,
 \label{fig:modalities}
 \end{figure}
 
-In this work we extend Shulman's real-cohesive type theory to reason not just
-about the cohesive structure of topological spaces, but also the differential
-structure. This additional structure, explored by \citet{Schreiber2013}, is
-called \emph{differential cohesion}, and is useful for applications in physics
-and Cartan geometry~\citep{Wellen2017}. In particular, \citeauthor{Wellen2017}
+In this work we aim at constructing a type theory similar to Shulman's real-cohesive type theory,
+having all the operations of what are called differential cohesive toposes.
+\FW{I am quite sure, that Mike invented the term ``real cohesion'' for 
+his more specific version of cohesion, where $\shape$ is defined as localization using the Dedekind-reals.
+So I removed ``real'' on some instances.}
+This additional structure, explored and used in \citet{Schreiber2013} 
+to reason about spaces of interest to modern physics, 
+ and allows synthetic reasoning about 
+higher differential geometry. 
+In particular, \citeauthor{Wellen2017}
 considers a small fragment of differential cohesive type theory that uses just
 the $\Cored$ modality. A full type theory for differential cohesion would cover
-not just the three differential modalities, but also the three real-cohesive
+not just the three differential modalities, but also the three cohesive
 modalities, all shown together in \cref{fig:modalities}.
 
-Following the \citeyear{Licata2016} paper on real cohesion, \citet{Licata2017}
-develop a general construction for non-dependent modal type theories, which we
+Following the \citeyear{Licata2016} paper on cohesion, \citet{Licata2017}
+developed a general construction for non-dependent modal type theories, which we
 instantiate for differential cohesion in this paper. Future work will extend
 this type theory to dependent and identity types.
 
-\section{Real cohesion in adjoint type theory}
+\section{Cohesion in adjoint type theory}
 
-\todo{start with real cohesion}
+\todo{start with cohesion}
 
 \section{Differential cohesion in adjoint type theory}
 
