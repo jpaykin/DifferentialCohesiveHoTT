@@ -555,7 +555,7 @@ Then we can express cut as:
 Rules for $\Red$: Notice that the hypothesis of $\Red$E varies universally over $m$. This can be split into two rules, $m=1$, when $mr=r$, and $m \neq 1$, when $mr = m$.
 \begin{mathpar}
 \inferrule*[Right = ``$\Red$I'']{\Gamma \yields^r e : A}{\Gamma \yields e^\Red : \Red A} \and
-\inferrule*[Right = $\Red$I]{\Gamma \cbar \Delta \cbar \cdot \cbar \Theta, \Lambda \cbar \Xi \yields e : A}{\Gamma \cbar \Delta \cbar \Theta \cbar \Lambda \cbar \Xi \yields e^\Cored : \Cored A} \and
+\inferrule*[Right = $\Red$I]{\Gamma \cbar \Delta \cbar \cdot \cbar \Theta, \Lambda \cbar \Xi \yields e : A}{\Gamma \cbar \Delta \cbar \Theta \cbar \Lambda \cbar \Xi \yields e^\Red : \Red A} \and
 \inferrule*[Right = $\Red$E]{\Gamma \yields^m e : \Red A \and \Gamma, x:_{mr} A \yields e' : C}{\Gamma \yields \redind{x}{m}{e}{e'} : C}
 \end{mathpar}
 Rules for $\Cored$: Notice that the hypothesis of $\Cored$E varies universally over $m$. This can be split into two rules, $m=1$, when $mi=i$, and $m \neq 1$, when $mi = m$.
