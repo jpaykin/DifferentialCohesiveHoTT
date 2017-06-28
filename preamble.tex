@@ -1,0 +1,57 @@
+%\usepackage[lmargin=2.5cm,rmargin=2.5cm,tmargin=2.5cm,bmargin=2.5cm]{geometry}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{phonetic} % for esh
+\usepackage{enumerate}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+\usepackage{authblk} % For authors' affiliations
+\makeatletter
+\renewcommand\AB@affilsepx{, \protect\Affilfont}
+\makeatother
+
+
+\usepackage[hidelinks]{hyperref}
+\usepackage{natbib}
+
+\usepackage[capitalize,noabbrev]{cleveref} % must be loaded after hyperref
+
+\usepackage{xspace}
+
+% Modalities
+\newcommand{\Red}{\Re}
+\newcommand{\Cored}{\Im}
+\newcommand{\Wat}{\&}
+\newcommand{\shape}{\ensuremath{\mathord{\raisebox{0.5pt}{\text{\rm\esh}}}}}
+\newcommand{\submodality}{\rotatebox[origin=c]{90}{$\subset$}}
+
+
+% Latin  Abbr
+\newcommand{\etal}{\emph{et al.}\xspace}
+\newcommand{\eg}{\emph{e.g.,}\xspace}
+\newcommand{\ie}{\emph{i.e.,}\xspace}
+\newcommand{\etc}{\emph{etc.}\xspace}
+
+%%%%%%%%%%%%%%
+%% Comments %%
+%%%%%%%%%%%%%%
+\usepackage{draft}
+
+\newnote[Jacob]{JAG}{blue}
+\newnote[Max]{MN}{blue}
+\newnote[Jennifer]{JP}{blue}
+\newnote[Mitchell]{MMR}{blue}
+\newnote[Felix]{FW}{blue}
+\newnote[Dan]{DL}{blue}
+\newnote[Mike]{MS}{blue}
+
+\newnote{fixme}{red}
+\newnote{note}{red}
+\newnote{todo}{red}
+\newnote[Cite:]{tocite}{red}
+
+
