@@ -47,11 +47,14 @@ and differential geometry. In this work we consider type theories for
 work begun by \citet{Shulman2015}.
 % These provide the means to access the topological or smooth structure on
 % spaces in a model internally.
-In his real-cohesive type theory, the type $\mathbb S^1$ for the topological
+In his real-cohesive type theory, the 0-type $\mathbb S^1$ for the topological
 circle is different from the usual homotopy type $S^1$, but the two are
 connected by the cohesive operation $\shape\,\mathbb S^1=S^1$, where $\shape$
-collapses the cohesive structure of the circle into its connected components.
-
+maps a type to its path $\infty$-groupoid. 
+This allowed Shulman to use homotopy theoretic statements about $S^1$ 
+to prove Brower's fixed-point theorem which
+states that all continuous maps over the topological disk have a fixed point.
+This is just one example of what can be done using topological spaces constructed from the reals.
 
 % In some instances internal languages of toposes allow mathematicians to reason
 % \emph{synthetically} about mathematical structures in a more concise and natural way. 
@@ -66,13 +69,19 @@ collapses the cohesive structure of the circle into its connected components.
 % where $\shape$ is a part of the cohesive structure.
 %
 
-This work aims at constructing a differential cohesive homotopy type theory, 
-which would allow synthetic reasoning not just about ordinary smooth manifolds,
-but also $\infty$-stack variants which are of great interest in current pure
+This work aims at going beyond topological structures or cohesive type theories 
+by constructing a differential cohesive homotopy type theory, 
+which would allow synthetic reasoning about smooth manifolds,
+and, with the features of homotopy type theory also about $\infty$-stack variants 
+which are of great interest in current pure
 mathematics. For example, \citet{SatiSchreiberStasheff2012} uses spaces locally
 modeled on 2- and 6-types, which are supported by and may already be reasoned
 about in a fragment of differential cohesive homotopy type theory used by
 \cite{Wellen2017} to develop the basics of Cartan geometry.
+Furthermore, differential cohesive toposes are used to great extend by \citet{Schreiber2013}
+to reason about spaces with geometric structures of interest to modern physics
+and the differential part of differential cohesion plays an important part in algebraic geometry,
+as first noted in the form of an adjoint triple by \citet{SimpsonTeleman}. 
 
 The most advanced type theory presented in this work supports all operations of
 differential cohesion arranged in an easy to work with pattern, but lacking
@@ -112,17 +121,8 @@ dependent types and identity types.
 
 \paragraph{Cohesion in adjoint type theory.}
 
-In previous work, \citet{Shulman2015} constructs a variant of homotopy type
-theory for $(\infty,1)$-toposes with an additional ``cohesive'' structure. In
-this setting, derivations in the type theory correspond to continuous maps that
-respect the cohesive structure of the space, providing a framework for a wide
-variety of synthetic proofs. For example, Brower's fixed-point theorem, which
-states that all continuous maps over the topological disk have a fixed point has
-no synthetic proof in ordinary homotopy type theory, but has a proof in cohesive
-HoTT~\citep{Shulman2015}.
-
-
-To capture cohesion in the type theory, \citet{Shulman2015} uses a \emph{modal}
+\citet{Shulman2015} constructs a variant of homotopy type
+theory for $(\infty,1)$-toposes with an additional ``cohesive'' structure using a \emph{modal}
 type theory~\citep{Pfenning2001} to describe the categorical structure of
 cohesive $(\infty,1)$-toposes. This structure consists of three
 \emph{modalities} \tocite{modalities} that form an adjoint triple
@@ -138,24 +138,19 @@ inductive type.
 In particular, \citeauthor{Shulman2015} defines the $\shape$ functor as a
 localization using the Dedekind-reals. While this approach admits very
 useful constructions of familiar topological spaces using the real numbers, like
-the \emph{topological spheres} or disks which have the right homotopy type, it
+the topological spheres or disks which have the right homotopy type, it
 is also interesting to look at general cohesion, where $\shape$ is not a priori
 linked to the Dedekind-reals.
-
+\FW{Maybe refer to what is happening below, i.e. the $\shape$,$\flat$,$\sharp$ modal type theory}
 
 \paragraph{Differential cohesion in adjoint type theory.}
 
 In this work we aim to construct a type theory similar to Shulman's cohesive
-type theory that captures the additional structure of what are called
-differential cohesive toposes. \FW{I am quite sure, that Mike invented the term
-  ``real cohesion'' for his more specific version of cohesion, where $\shape$ is
-  defined as localization using the Dedekind-reals. So I removed ``real'' on
-  some instances.} Differential cohesive toposes, used by \citet{Schreiber2013}
-to reason about spaces with geometric structures of interest to modern physics,
-have already been explored from within a type theory by \citet{Wellen2017}.
-There, just a small fragment of differential cohesive type theory is used to
+type theory that captures the additional structure of 
+differential cohesive toposes. 
+\citet{Wellen2017} just uses small fragment of differential cohesive type theory to
 define and use notions of differential geometry. 
-The only difference to homotopy type theory
+The only difference to plain homotopy type theory
  is the existence of the $\Cored$ modality given by axioms.
 The comonadic modalities, $\Red$, $\Wat$, $\flat$ can not be added to a type theory in this way -- 
 the rules have to be changed.
