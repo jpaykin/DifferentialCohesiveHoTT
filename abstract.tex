@@ -36,27 +36,32 @@
   comments, \eg when submitting, uncomment the \texttt{draftfalse}
   command in this document.}
 
-In some instances internal languages of toposes allow mathematicians to reason
-\emph{synthetically} about mathematical structures in a more concise and natural way. 
-While Homotopy Type Theory provides an internal language for $(\infty,1)$-toposes, 
-it is also possible to consider type theories that correspond to $(\infty,1)$-toposes with extra
-structure of interest in algebraic and differential geometry.
-The approach to achieve this relevant to this work, is by \emph{differential cohesive} and \emph{cohesive} structure.
-These provide means to access the topological or smooth structure on spaces in a model internally.
-For example, in real-cohesive type theory constructed by \citet{Shulman2015}, there is a type $\mathbb S^1$ for the topological circle 
-and the usual homotopy type $S^1$ which is different from $\mathbb S^1$ but the two are connected by $\shape\mathbb S^1=S^1$ 
-where $\shape$ is a part of the cohesive structure.
+As the internal languages of toposes, type theories allow mathematicians to
+reason \emph{synthetically} about mathematical structures in a concise and
+natural way. While Homotopy Type Theory provides an internal language for
+$(\infty,1)$-toposes, it is also possible to consider type theories that
+correspond to $(\infty,1)$-toposes with extra structure of interest in algebraic
+and differential geometry. In this work we consider type theories for
+\emph{differential cohesive} and \emph{cohesive} structure, following a line of
+work begun by \citet{Shulman2015}.
+% These provide the means to access the topological or smooth structure on
+% spaces in a model internally.
+In his real-cohesive type theory, the type $\mathbb S^1$ for the topological
+circle is different from the usual homotopy type $S^1$, but the two are
+connected by the cohesive operation $\shape\,\mathbb S^1=S^1$, where $\shape$
+collapses the cohesive structure of the circle into its connected components.
 
-This work aims at constructing a differential cohesive homotopy type theory, 
+This work aims at constructing a differential cohesive homotopy type theory,
 which would allow synthetic reasoning not just about ordinary smooth manifolds,
-but also $\infty$-stack variants which are of great interest in current pure mathematics.
-For example, in \cite{SatiSchreiberStasheff2012} spaces locally modeled on 2- and 6-types are important, 
-which are supported by and may already be reasoned about in a fragment of 
-differential cohesive homotopy type theory used in \cite{Wellen2017} to develop the basics of Cartan geometry.
+but also $\infty$-stack variants which are of great interest in current pure
+mathematics. For example, \cite{SatiSchreiberStasheff2012} uses spaces locally
+modeled on 2- and 6-types, which are supported by and may already be reasoned
+about in a fragment of differential cohesive homotopy type theory used by
+\cite{Wellen2017} to develop the basics of Cartan geometry.
 
-The most advanced type theory presented in this work supports all operations of differential cohesion 
-arranged in an easy to work with pattern,
-but lacking dependent types and identity types.
+The most advanced type theory presented in this work supports all operations of
+differential cohesion arranged in an easy to work with pattern, but lacking
+dependent types and identity types.
 
 
 \begin{wrapfigure}{R}{0.5\textwidth}
