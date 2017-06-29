@@ -50,8 +50,14 @@ where $\shape$ is a part of the cohesive structure.
 This work aims at constructing a differential cohesive homotopy type theory, 
 which would allow synthetic reasoning not just about ordinary smooth manifolds,
 but also $\infty$-stack variants which are of great interest in current pure mathematics.
-For example, in \cite{SatiSchreiberStasheff2012} spaces locally modeled on a 6-type are important, 
-which is supported by a fragment of differential cohesive homotopy type theory used in \cite{Wellen2017}.
+For example, in \cite{SatiSchreiberStasheff2012} spaces locally modeled on 2- and 6-types are important, 
+which are supported by and may already be reasoned about in a fragment of 
+differential cohesive homotopy type theory used in \cite{Wellen2017} to develop the basics of Cartan geometry.
+
+The most advanced type theory presented in this work supports all operations of differential cohesion 
+arranged in an easy to work with pattern,
+but lacking dependent types and identity types.
+
 
 \begin{wrapfigure}{R}{0.5\textwidth}
 \begin{center}
@@ -73,11 +79,12 @@ which is supported by a fragment of differential cohesive homotopy type theory u
   \end{tikzpicture}
 \end{center}
 \caption{On the bottom, the real-cohesion operations $\shape$ (the connected
-  components with discrete topology), $\flat$ (the underlying set with discrete
+  components with discrete topology on 1-toposes and the fundamental $\infty$-groupoid in the $(\infty,1)$-topos version), 
+  $\flat$ (the underlying set with discrete
   topology), and $\sharp$ (the underlying set with codiscrete topology). On the
-  top, the differential-cohesion operations $\Red$ (the underlying set with
-  reduced topology), $\Cored$ (the underlying set with coreduced topology), and
-  $\Wat$ (??). The inclusion symbol $F \subset G$ indicates that the image of
+  top, the differential-cohesion operations $\Red$ (the underlying space without infinitesimal directions), 
+  $\Cored$ (a space with the same points but all maps from it to any other space induce trivial maps on tangent spaces), and
+  $\Wat$ (on manifolds, this is just the discrete underlying set; applied to the right stacks, it might be a coefficient object for interesting cohomology theories). The inclusion symbol $F \subset G$ indicates that the image of
   $F$ is contained in the image of $G$.}
 \label{fig:modalities}
 \end{wrapfigure}
