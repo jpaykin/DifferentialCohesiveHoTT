@@ -36,14 +36,22 @@
   comments, \eg when submitting, uncomment the \texttt{draftfalse}
   command in this document.}
 
-Internal languages \FW{I do not know, if Type Theories themselves have internal
-  language, as I understand the notion ``internal language'', some Type Theories
-  \emph{are} internal languages \emph{of} special categories. So I changed this
-  sentence... Great comment-function ;-)} allow mathematicians to reason
-\emph{synthetically} about mathematical structures. While Homotopy Type Theory
-provides an internal language for $(\infty,1)$-toposes, it is also possible to
-consider type theories that correspond to $(\infty,1)$-toposes with extra
+In some instances internal languages of toposes allow mathematicians to reason
+\emph{synthetically} about mathematical structures in a more concise and natural way. 
+While Homotopy Type Theory provides an internal language for $(\infty,1)$-toposes, 
+it is also possible to consider type theories that correspond to $(\infty,1)$-toposes with extra
 structure of interest in algebraic and differential geometry.
+The approach to achieve this relevant to this work, is by \emph{differential cohesive} and \emph{cohesive} structure.
+These provide means to access the topological or smooth structure on spaces in a model internally.
+For example, in real-cohesive type theory constructed by \citet{Shulman2015}, there is a type $\mathbb S^1$ for the topological circle 
+and the usual homotopy type $S^1$ which is different from $\mathbb S^1$ but the two are connected by $\shape\mathbb S^1=S^1$ 
+where $\shape$ is a part of the cohesive structure.
+
+This work aims at constructing a differential cohesive homotopy type theory, 
+which would allow synthetic reasoning not just about ordinary smooth manifolds,
+but also $\infty$-stack variants which are of great interest in current pure mathematics.
+For example, in \cite{SatiSchreiberStasheff2012} spaces locally modeled on a 6-type are important, 
+which is supported by a fragment of differential cohesive homotopy type theory used in \cite{Wellen2017}.
 
 \begin{wrapfigure}{R}{0.5\textwidth}
 \begin{center}
@@ -87,7 +95,7 @@ no synthetic proof in ordinary homotopy type theory, but has a proof in cohesive
 HoTT~\citep{Shulman2015}.
 
 
-To capture cohesion in the type theory, \citet{Shulman2015} usees a \emph{modal}
+To capture cohesion in the type theory, \citet{Shulman2015} uses a \emph{modal}
 type theory~\citep{Pfenning2001} to describe the categorical structure of
 cohesive $(\infty,1)$-toposes. This structure consists of three
 \emph{modalities} \tocite{modalities} that form an adjoint triple
@@ -120,9 +128,12 @@ differential cohesive toposes. \FW{I am quite sure, that Mike invented the term
 to reason about spaces with geometric structures of interest to modern physics,
 have already been explored from within a type theory by \citet{Wellen2017}.
 There, just a small fragment of differential cohesive type theory is used to
-define and use notions of differential geometry, namely the $\Cored$ modality,
-which -- contrary to other parts of differential cohesion -- may be added to
-Homotopy Type Theory by postulating axioms.
+define and use notions of differential geometry. 
+The only difference to homotopy type theory
+ is the existence of the $\Cored$ modality given by axioms.
+The comonadic modalities, $\Red$, $\Wat$, $\flat$ can not be added to a type theory in this way -- 
+the rules have to be changed.
+And it is sometimes better, to also implement the monadic modalities by modifying the rules instead of adding axioms.
 
 A full type theory for differential cohesion would cover not just the three
 differential modalities, but also the three cohesive modalities, all shown
@@ -172,8 +183,6 @@ results---substitution, structural rules, \etc---for free.\footnote{We must
 
 Future work will extend this type theory to dependent and identity types.
 \todo{Indicate what is hard about this.}
-
-
 
 
 \todo{All--please edit bibtex entries if necessary.}
