@@ -147,19 +147,16 @@ linked to the Dedekind-reals.
 
 In this work we aim to construct a type theory similar to Shulman's cohesive
 type theory that captures the additional structure of what are called
-differential cohesive toposes. \FW{I am quite sure, that Mike invented the term
-  ``real cohesion'' for his more specific version of cohesion, where $\shape$ is
-  defined as localization using the Dedekind-reals. So I removed ``real'' on
-  some instances.} Differential cohesive toposes, used by \citet{Schreiber2013}
-to reason about spaces with geometric structures of interest to modern physics,
-have already been explored from within a type theory by \citet{Wellen2017}.
-There, just a small fragment of differential cohesive type theory is used to
-define and use notions of differential geometry. 
-The only difference to homotopy type theory
- is the existence of the $\Cored$ modality given by axioms.
-The comonadic modalities, $\Red$, $\Wat$, $\flat$ can not be added to a type theory in this way -- 
-the rules have to be changed.
-And it is sometimes better, to also implement the monadic modalities by modifying the rules instead of adding axioms.
+differential cohesive toposes. Differential cohesive toposes, used by
+\citet{Schreiber2013} to reason about spaces with geometric structures of
+interest to modern physics, have already been explored from within a type theory
+by \citet{Wellen2017}. There, just a small fragment of differential cohesive
+type theory is used to define and use notions of differential geometry. The only
+difference to homotopy type theory is the existence of the $\Cored$ modality
+given by axioms. The comonadic modalities, $\Red$, $\Wat$, $\flat$ can not be
+added to a type theory in this way -- the rules have to be changed. And it is
+sometimes better, to also implement the monadic modalities by modifying the
+rules instead of adding axioms.
 
 A full type theory for differential cohesion would cover not just the three
 differential modalities (in blue in \cref{fig:modalities}), but also the three
