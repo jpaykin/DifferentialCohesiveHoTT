@@ -3,7 +3,7 @@
 
 % use \draftfalse to turn off comments
 % use \drafttrue to turn on comments (default)
-%\draftfalse
+\draftfalse
 
 \title{Differential Cohesive Type Theory (Extended Abstract)\thanks{This
     material is based upon work supported by the National Science Foundation
@@ -37,141 +37,153 @@
   command in this document.}
 
 
-As the internal languages of toposes, type theories allow mathematicians to
+As internal languages of toposes, type theories allow mathematicians to
 reason \emph{synthetically} about mathematical structures in a concise and
 natural way. While Homotopy Type Theory provides an internal language for
 $(\infty,1)$-toposes, it is also possible to consider type theories that
 correspond to $(\infty,1)$-toposes with extra structure of interest in algebraic
 and differential geometry. In this work we consider type theories for
 \emph{differential cohesive} and \emph{cohesive} structure, following a line of
-work begun by \citet{Shulman2015}.
+work begun by \citet{Shulman2015} and \citet{Licata2016}.
 % These provide the means to access the topological or smooth structure on
 % spaces in a model internally.
 In his real-cohesive type theory, the 0-type $\mathbb S^1$ for the topological
 circle is different from the usual homotopy type $S^1$, but the two are
 connected by the cohesive operation $\shape\,\mathbb S^1=S^1$, where $\shape$
-maps a type to its path $\infty$-groupoid. 
-This allowed Shulman to use homotopy theoretic statements about $S^1$ 
-to prove Brower's fixed-point theorem which
-states that all continuous maps over the topological disk have a fixed point.
-This is just one example of what can be done using topological spaces constructed from the reals.
+maps a type to its path $\infty$-groupoid. This allows Shulman to use homotopy
+theoretic statements about $S^1$ to prove Brower's fixed-point theorem---that
+all continuous maps over the topological disk have a fixed point.
 
+% This is just one example of what can be done using topological spaces
+% constructed from the reals.
 
-This work aims at going beyond topological structures or cohesive type theories 
-by constructing a differential cohesive homotopy type theory, 
-which would allow synthetic reasoning about smooth manifolds,
-and, with the features of homotopy type theory also about $\infty$-stack variants 
-which are of great interest in current pure
-mathematics. For example, \citet{SatiSchreiberStasheff2012} uses spaces locally
-modeled on 2- and 6-types, which are supported by and may already be reasoned
-about in a fragment of differential cohesive homotopy type theory used by
-\cite{Wellen2017} to develop the basics of Cartan geometry.
-Furthermore, differential cohesive toposes are used to great extend by \citet{Schreiber2013}
-to reason about spaces with geometric structures of interest to modern physics
-and the differential part of differential cohesion plays an important part in algebraic geometry,
-as first noted in the form of an adjoint triple by \citet{SimpsonTeleman}. 
+This line of work aims to go beyond cohesive type theories by constructing a
+\emph{differential cohesive} homotopy type theory, which would allow synthetic
+reasoning about smooth manifolds and their $\infty$-stack variants, which are of
+great interest in current pure mathematics. For example,
+\citet{SatiSchreiberStasheff2012} uses spaces locally modeled on 2- and 6-types.
+These are supported by and can already be reasoned about in a fragment of
+differential cohesive homotopy type theory used by \cite{Wellen2017} to develop
+the basics of Cartan geometry. Furthermore, differential cohesive toposes are
+used to great extent by \citet{Schreiber2013} to reason about spaces with
+geometric structures of interest to modern physics, and the differential part of
+differential cohesion plays an important part in algebraic geometry, as first
+noted in the form of an adjoint triple by \citet{SimpsonTeleman}.
 
-The most advanced type theory presented in this work supports all operations of
-differential cohesion arranged in an easy to work with pattern, but lacking
-dependent types and identity types.
+The type theory described here supports all operations of differential cohesion
+arranged in a predictable pattern, but lacks dependent and identity types.
+Future work will extend it to a true \emph{homotopy} type theory.
 
-
-\begin{wrapfigure}{R}{0.5\textwidth}
+%\begin{wrapfigure}{TR}{0.4\textwidth}
+\begin{figure}
 \begin{center}
   \begin{tikzpicture}[node distance=2cm]
-    \node[color=blue] (R) {$\Red$};
-    \node[right of=R,color=blue] (I) {$\Cored$};
-    \node[right of=I,color=blue] (E) {$\Wat$};
+    \node (R) {$\Red$};
+    \node[right of=R] (I) {$\Cored$};
+    \node[right of=I] (E) {$\Wat$};
     \node[below of=I, node distance=1.6cm] (S) {$\shape$};
     \node[below of=E, node distance=1.6cm] (b) {$\flat$};
     \node[right of=b] (s) {$\sharp$};
   
-    \path (R) to node[color=blue] {$\dashv$} (I);
-    \path (I) to node[color=blue] {$\dashv$} (E);
+    \path (R) to node {$\dashv$} (I);
+    \path (I) to node {$\dashv$} (E);
     \path (S) to node {$\dashv$} (b);
     \path (b) to node {$\dashv$} (s);
 
-    \path (I) to node[color=blue] {$\submodality$} (S);
-    \path (E) to node[color=blue] {$\submodality$} (b);
+    \path (I) to node {$\submodality$} (S);
+    \path (E) to node {$\submodality$} (b);
   \end{tikzpicture}
 \end{center}
 \caption{On the bottom, the real-cohesion operations $\shape$ (the connected
-  components with discrete topology on 1-toposes and the fundamental $\infty$-groupoid in the $(\infty,1)$-topos version), 
-  $\flat$ (the underlying set with discrete
-  topology), and $\sharp$ (the underlying set with codiscrete topology). On the
-  top, the differential operations $\Red$ (the underlying space without infinitesimal directions), 
-  $\Cored$ (a space with the same points but all maps from it to any other space induce trivial maps on tangent spaces), and
-  $\Wat$ (on manifolds, this is just the discrete underlying set; applied to the right stacks, it might be a coefficient object for interesting cohomology theories). The inclusion symbol $F \subset G$ indicates that the image of
-  $F$ is contained in the image of $G$.}
+  components with discrete topology on 1-toposes and the fundamental
+  $\infty$-groupoid in the $(\infty,1)$-topos), $\flat$ (the underlying set with
+  discrete topology), and $\sharp$ (the underlying set with codiscrete
+  topology). On the top, the differential operations $\Red$ (the underlying
+  space without infinitesimal directions), $\Cored$ (the underlying space where
+  all maps out of it are trivial on tangent spaces), and $\Wat$ (on manifolds,
+  this is just the discrete underlying set; applied to the right stacks, it
+  might be a coefficient object for interesting cohomology theories). The
+  inclusion symbol $F \subset G$ indicates that the image of $F$ is contained in
+  the image of $G$.}
 \label{fig:modalities}
-\end{wrapfigure}
+%\end{wrapfigure}
+\end{figure}
 
 
 \paragraph{Cohesion in adjoint type theory.}
 
-\citet{Shulman2015} constructs a variant of homotopy type
-theory for $(\infty,1)$-toposes with an additional ``cohesive'' structure using a \emph{modal}
+\citet{Shulman2015} constructs a variant of homotopy type theory for
+$(\infty,1)$-toposes with an additional cohesive structure using a \emph{modal}
 type theory~\citep{Pfenning2001} to describe the categorical structure of
 cohesive $(\infty,1)$-toposes. This structure consists of three
-\emph{modalities} \tocite{modalities} that form an adjoint triple
-$\shape \dashv \flat \dashv \sharp$; they are described in black in
-\cref{fig:modalities}. In addition, variables in the type theory are marked as
-either \emph{cohesive} or \emph{crisp} depending on how they are used in a
-term---a typing judgment $\Gamma \mid \Delta \vdash e : \tau$ is continuous on
-the cohesive variables in $\Delta$, but may be discontinuous on the crisp
-variables in $\Gamma$. The modalities $\flat$ and $\sharp$ are defined as type
-and term formation and introduction rules, while $\shape$ is defined as a higher
+\emph{modalities} that form the adjoint triple
+$\shape \dashv \flat \dashv \sharp$ described in
+\cref{fig:modalities}. In the type theory, variables are marked as either
+\emph{cohesive} or \emph{crisp} depending on how they are used in a term---a
+typing judgment $\Gamma \mid \Delta \vdash e : \tau$ is continuous on the
+cohesive variables in $\Delta$, but may be discontinuous on the crisp variables
+in $\Gamma$. The modalities $\flat$ and $\sharp$ are defined as type and term
+formation and introduction rules, while $\shape$ is defined as a higher
 inductive type.
 
-In particular, \citeauthor{Shulman2015} defines the $\shape$ functor as a
-localization using the Dedekind-reals. While this approach admits very
-useful constructions of familiar topological spaces using the real numbers, like
-the topological spheres or disks which have the right homotopy type, it
-is also interesting to look at general cohesion, where $\shape$ is not a priori
-linked to the Dedekind-reals.
-\FW{Maybe refer to what is happening below, i.e. the $\shape$,$\flat$,$\sharp$ modal type theory}
+In particular, \citeauthor{Shulman2015} defines $\shape$ as a localization with
+respect to the Dedekind-reals. This approach admits useful constructions of
+familiar topological spaces using the real numbers, including certain
+topological spheres or disks, but it is also interesting to look at general
+cohesion, where $\shape$ is not a priori linked to the Dedekind-reals. \FW{Maybe
+  refer to what is happening below, i.e. the $\shape$,$\flat$,$\sharp$ modal
+  type theory}
+
+In a different approach, \citet{Licata2017} provide a general purpose
+framework for (non-dependent) modal type theories, called \emph{adjoint type
+  theory}, which we can instantiate with the three cohesive operations
+independent of the Dedekind-reals. The result is a typing judgment with three
+sorts of contexts, written $\Gamma \mid \Delta \mid \Xi \vdash e : \tau$, where
+$\Gamma$ and $\Delta$ still hold crisp and cohesive variables, respectively, and
+where $\Xi$ contains \emph{shapely} variables, which are constant on the
+connected components of the topological structure. In particular, crisp
+variables correspond directly to the modality $\flat$, while shapely variables
+correspond to the modality $\shape$.
+
 
 \paragraph{Differential cohesion in adjoint type theory.}
 
-In this work we aim to construct a type theory similar to Shulman's cohesive
-type theory that captures the additional structure of differential cohesive
-toposes. \citet{Wellen2017} just uses small fragment of differential cohesive
-type theory to define and use notions of differential geometry. The only
-difference to plain homotopy type theory is the existence of the $\Cored$
-modality given by axioms. The comonadic modalities, $\Red$, $\Wat$, $\flat$ can
-not be added to a type theory in this way -- the rules have to be changed. And
-it is sometimes better, to also implement the monadic modalities by modifying
-the rules instead of adding axioms.
+To extend the type theory to differential cohesive toposes, we consider three
+additional operations, described in the top row of \cref{fig:modalities}, in
+addition to the cohesive operations. \citet{Wellen2017} extends HoTT
+axiomatically with the $\Cored$ modality (similar to \citeauthor{Shulman2015}'s
+approach to $\shape$) but the comonadic modalities $\Red$, $\Wat$, and (in the
+case of ordinary cohesion) $\flat$ cannot be added axiomatically in the same
+way. Further, Wellen's construction relies on a particular formulation of the
+differentially cohesive real line, but it is unknown whether that can be defined
+internally to the type theory; in typical models of differential cohesion, the
+Dedekind reals do not correspond to the real line as a smooth space!
+
+Our approach is thus to continue with \citet{Licata2017}'s adjoint type theory
+framework to describe the differential operations, instead of
+\citet{Shulman2015}'s more specialized type theory. We extend the typing
+judgment to differential cohesive variables, where the judgment
+$\Gamma \mid \Delta \mid \Theta \mid \Lambda \mid \Xi \vdash e : \tau$ uses six
+different sorts of contexts, as described in \cref{fig:contexts}. We add the
+modalities $\Red$, $\Cored$, and $\Wat$ to this judgment as inference rules
+following \citeauthor{Licata2017}'s framework. Crucially, because the type
+theory is derived straightforwardly from this framework, we get some
+meta-theoretic results---substitution, structural rules, \etc---for free!
+
+% In fact, the type theory for differential cohesion covers not just the three
+% differential modalities, but also the three cohesive modalities. Thus, Shulman's
+% construction cannot be extended directly from real to differential cohesion---
+% and in typical models of differential cohesion, the Dedekind reals do not
+% correspond to the real line as a smooth space! Furthermore, it is not known if
+% there is a way to define the differentially cohesive real line internally to
+% the type theory.
 
 
-A full type theory for differential cohesion would cover not just the three
-differential modalities (in blue in \cref{fig:modalities}), but also the three
-cohesive modalities. Unfortunately, Shulman's construction cannot be extended
-directly from real to differential cohesion---in typical models of differential
-cohesion the Dedekind reals do not correspond to the real line as a smooth
-space! Furthermore, it is not known if there is a way to define the
-differentially cohesive real line internally to the type theory.
+% And it is sometimes better, to also implement the monadic modalities by
+% modifying the rules instead of adding axioms.
 
-Following the \citeyear{Licata2016} paper on cohesion, \citet{Licata2017}
-developed a general construction for non-dependent modal type theories, which we
-instantiate for differential cohesion in this paper. This takes place in two
-stages.
 
-First, in the absence of dependent types, we cannot utilize Shulman's definition
-of $\shape$ as a higher inductive type characterized by its localization
-properties. Instead we give introduction and elimination rules for $\shape$
-internally to the type theory, guided by \citeauthor{Licata2017}'s general
-construction. The result is a typing judgment with three sorts of contexts,
-written $\Gamma \mid \Delta \mid \Xi \vdash e : \tau$, where $\Gamma$ and
-$\Delta$ still hold crisp and cohesive variables, respectively, and where $\Xi$
-contains \emph{shapely} variables, which are constant on the connected
-components of the topological structure. In particular, crisp variables
-correspond directly to the modality $\flat$, while shapely variables correspond
-to the modality $\shape$.
-
-Next, we extend the judgment to differentially cohesive variables. The judgment
-$\Gamma \mid \Delta \mid \Theta \mid \Lambda \mid \Xi \vdash e : \tau$ uses
-variables in the following way:
+\begin{wrapfigure}{L}{0.31\textwidth}
 \begin{center} \begin{tabular}{lll}
     $\Gamma$ & crisp  &  $\flat$ \\
     $\Delta$ & reduced & $\Red$ \\
@@ -179,22 +191,22 @@ variables in the following way:
     $\Lambda$ & coreduced & $\Cored$ \\
     $\Xi$ & shapely & $\shape$
 \end{tabular} \end{center}
-%
-We add the modalities $\Red$, $\Cored$, and $\Wat$ to this judgment as inference
-rules using \citeauthor{Licata2017}'s framework. Because the type theory is
-derived straightforwardly from this framework, we get some meta-theoretic
-results---substitution, structural rules, \etc---for free.\footnote{We must
-  still be careful about the proof that our type system corresponds exactly to
-  an instance of \citeauthor{Licata2017}'s framework.} \JP{Do we want to give
-  any further details of the mode theory here?}
+\caption{Variable usage of the judgment
+  $\Gamma \mid \Delta \mid \Theta \mid \Lambda \mid \Xi \vdash e : \tau$.}
+\label{fig:contexts}
+\end{wrapfigure}
 
-\todo{Key question: what are the contributions of this work?}
-
-Future work will extend this type theory to dependent and identity types.
-\todo{Indicate what is hard about this.}
-
-
-\todo{All--please edit bibtex entries if necessary.}
+\paragraph{Where are the homotopies?}
+Future work will extend this type theory to dependent and identity types, but
+this is not a straightforward task because of the dependency structure of a
+differential cohesive type. In \citet{Shulman2015}'s type theory, cohesive
+variables can depend on crisp variables but not vice versa; in a dependent
+version of adjoint cohesive type theory, both crisp and cohesive variables will
+also depend on shapely variables, and vice versa, which causes problems when
+constructing terms and types. The same dependency problem
+arises in the differential case. The solution will require a
+more nuanced view on the dependency graph of a type, but we are confident it is
+surmountable in future work.
 
 % Using a bibstyle that is compatible with author/year citations and also the
 % eprint field (for arXiv)
