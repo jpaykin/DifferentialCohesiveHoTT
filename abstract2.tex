@@ -59,33 +59,33 @@ continuous maps over the \emph{topological} disk have a fixed
 point---using the synthetic proof of $\pi_1(S^1) = \mathbb{Z}$ for the
 \emph{homotopical} (higher-inductive) circle.
 
-Cohesive toposes can be extended to \emph{differential cohesive
-  toposes}, which express extra structure that is of interest in
-algebraic and differential geometry.  Examples of differential cohesive
-toposes include smooth manifolds and their $\infty$-stack variants,
-which are of great interest in current pure mathematics. For example,
-\citet{SatiSchreiberStasheff2012} uses spaces locally modeled on 2- and
-6-types.  Furthermore, differential cohesive toposes are used to great
-extent by \citet{Schreiber2013} to reason about spaces with geometric
-structures of interest to modern physics, and the differential part of
-differential cohesion plays an important part in algebraic geometry, as
-first noted in the form of an adjoint triple by \citet{SimpsonTeleman}.
-In addition to the cohesive modalities $\shape$, $\flat$, and $\sharp$,
-differential cohesion adds three more modalities, $\Red$, $\Cored$, and
-$\Wat$, which axiomatize an abstract notion of \emph{infinitesimal
-  direction} that is used to access the differential structure.  For
-example, $\Red A$ is the underlying space of $A$ without infinitesimal
-directions, while $\Cored A$ is the underlying space of $A$ but with all
-maps made trivial on tangent spaces.  $\Red$ and $\Wat$ are comonadic
-modalities, while $\Cored$ is a monadic modality; they form an adjoint
-triple $\Red \dashv \Cored \dashv \Wat$; and they have certain
-relationships with the cohesive modalities (e.g. $\shape$ is contained
-in $\Cored$ and $\flat$ is contained in $\Wat$).  Initial work by
-\citet{Wellen2017} postulates a monadic modality $\Cored$ in standard
-homotopy type theory and develops the basics of Cartan geometry, which
-suggests that enriching homotopy type theory with the differential
-cohesion modalities could be a useful tool for working synthetically in
-this setting.
+The concept of cohesive toposes can be extended to \emph{differential
+  cohesive toposes}, which express extra structure that is of interest
+in algebraic and differential geometry.  Examples of differential
+cohesive toposes include smooth manifolds and their $\infty$-stack
+variants, which are of great interest in current pure mathematics. For
+example, \citet{SatiSchreiberStasheff2012} use spaces locally modeled
+on 2- and 6-types.  Furthermore, differential cohesive toposes are used
+to great extent by \citet{Schreiber2013} to reason about spaces with
+geometric structures of interest to modern physics, and the differential
+part of differential cohesion plays an important part in algebraic
+geometry, as first noted in the form of an adjoint triple by
+\citet{SimpsonTeleman}.  In addition to the cohesive modalities
+$\shape$, $\flat$, and $\sharp$, differential cohesion adds three more
+modalities, $\Red$, $\Cored$, and $\Wat$, which axiomatize an abstract
+notion of \emph{infinitesimal direction} that is used to access the
+differential structure.  For example, $\Red A$ is the underlying space
+of $A$ without infinitesimal directions, while $\Cored A$ is the
+underlying space of $A$ but with all maps made trivial on tangent
+spaces.  $\Red$ and $\Wat$ are comonadic modalities, while $\Cored$ is a
+monadic modality; they form an adjoint triple $\Red \dashv \Cored \dashv
+\Wat$; and they have certain relationships with the cohesive modalities
+(e.g. $\shape$ is contained in $\Cored$ and $\flat$ is contained in
+$\Wat$).  Initial work by \citet{Wellen2017} postulates a monadic
+modality $\Cored$ in standard homotopy type theory and develops the
+basics of Cartan geometry, which suggests that enriching homotopy type
+theory with the differential cohesion modalities could be a useful tool
+for working synthetically in this setting.
  
 %%  and $\Wat A$ (on manifolds, this is just the discrete
 %% underlying set; applied to the right stacks, it might be a coefficient
@@ -177,13 +177,13 @@ variables correspond to the modality $\shape$.
 
 Our second contribution is to extend this to the differential cohesive
 modalities.  We have given a mode theory in adjoint type theory for this
-and again unpacked a nice formulation of the rules of the specialized
-rules.  The result is a judgment $\Gamma \mid \Delta \mid \Theta \mid
-\Lambda \mid \Xi \vdash e : \tau$ that uses six different sorts of
-contexts, corresponding to the modalities $\flat$, $\Red$, identity,
-$\Cored$, and $\shape$ respectively.  The rules for the types
-$\Red$, $\Cored$, and $\Wat$ manipulate these contexts in subtle ways,
-which express the relationships between the modalities.
+and again unpacked a nice formulation of the specialized rules.  The
+result is a judgment $\Gamma \mid \Delta \mid \Theta \mid \Lambda \mid
+\Xi \vdash e : \tau$ that uses five different sorts of contexts,
+corresponding to the modalities $\flat$, $\Red$, identity, $\Cored$, and
+$\shape$ respectively.  The rules for the cohesive and differential
+cohesive types manipulate these contexts in subtle ways, which express
+the relationships between the modalities.
 
 In work in progress, we are extending this type theory to dependent
 types, which is not straightforward because of the dependency structure
