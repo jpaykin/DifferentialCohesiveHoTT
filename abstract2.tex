@@ -54,7 +54,7 @@ discretely), $\sharp A$ (retopologize the type $A$ codiscretely), and
 $\shape A$ (make topological paths into homotopical paths), which form
 an adjoint triple $\shape \dashv \flat \dashv \sharp$.  These modalities
 allow synthetic homotopy theory to be used to prove topological
-statements, e.g. proving the Brower fixed-point theorem---that all
+statements, e.g. proving the Brouwer fixed-point theorem---that all
 continuous maps over the \emph{topological} disk have a fixed
 point---using the synthetic proof of $\pi_1(S^1) = \mathbb{Z}$ for the
 \emph{homotopical} (higher-inductive) circle.
@@ -76,7 +76,7 @@ $\Wat$, which axiomatize an abstract notion of \emph{infinitesimal
   direction} that is used to access the differential structure.  For
 example, $\Red A$ is the underlying space of $A$ without infinitesimal
 directions, while $\Cored A$ is the underlying space of $A$ but with all
-maps out made trivial on tangent spaces.  $\Red$ and $\Wat$ are comonadic
+maps made trivial on tangent spaces.  $\Red$ and $\Wat$ are comonadic
 modalities, while $\Cored$ is a monadic modality; they form an adjoint
 triple $\Red \dashv \Cored \dashv \Wat$; and they have certain
 relationships with the cohesive modalities (e.g. $\shape$ is contained
@@ -102,7 +102,7 @@ postulated~\citep{Shulman2015}, this design must involve changing the
 judgement structure of the type theory.  In our talk, we can report on a
 simply-typed $\lambda$-calculus that describes the structure of the six
 modalities as functors on closed types/contexts, which we have designed
-using recent work on adjoint type theory~\citet{Licata2017}.  We can
+using recent work on adjoint type theory~\citep{Licata2017}.  We can
 also describe work-in-progress to express the fiberwise behavior of
 these modalities on dependent types.
 
@@ -141,18 +141,19 @@ these modalities on dependent types.
 %% %\end{wrapfigure}
 %% \end{figure}
 
-Real-cohesive homotopy type theory~\citet{Shulman2015} includes a
-subsystem \emph{spatial type theory} with only the $\flat$ and $\sharp$
-modalities, where the $\flat$ comonadic modality is represented by rules
-similar to the judgemental presentation of a necessitation modality in
-modal logic~\citep{Pfenning2001}.  A special kind of \emph{crisp}
-variable is used to define the $\flat$ type, while ordinary variables
-are called \emph{cohesive}, and a typing judgment $\Gamma \mid \Delta
-\vdash e : \tau$ is continuous on the cohesive variables in $\Delta$,
-but may be discontinuous on the crisp variables in $\Gamma$.  While the
-$\flat$ and $\sharp$ modalities are basic type constructors, the
-$\shape$ (fundamental $\infty$-groupoid, turning topological paths into
-homotopy paths) is defined as a higher inductive type, a localization
+\paragraph{Contributions.}  Real-cohesive homotopy type
+theory~\citet{Shulman2015} includes a subsystem \emph{spatial type
+  theory} with only the $\flat$ and $\sharp$ modalities, where the
+$\flat$ comonadic modality is represented by rules similar to the
+judgemental presentation of a necessitation modality in modal
+logic~\citep{Pfenning2001}.  A special kind of \emph{crisp} variable is
+used to define the $\flat$ type, while ordinary variables are called
+\emph{cohesive}, and a typing judgment $\Gamma \mid \Delta \vdash e :
+\tau$ is continuous on the cohesive variables in $\Delta$, but may be
+discontinuous on the crisp variables in $\Gamma$.  While the $\flat$ and
+$\sharp$ modalities are basic type constructors, the $\shape$
+(fundamental $\infty$-groupoid, turning topological paths into homotopy
+paths) is defined as a higher inductive type, a localization
 (nullification) with respect to the Dedekind-reals.  This approach
 admits useful constructions of familiar topological spaces using the
 real numbers, including certain topological spheres or disks.
@@ -163,16 +164,16 @@ differential cohesion, the Dedekind reals do not correspond to the real
 line as a smooth space), so our first contribution is to formulate an
 abstract shape modality.  We have given a \emph{mode theory} in adjoint
 logic~\citep{Licata2017} that expresses all three cohesive modalities,
-and because cut elimination holds for all mode theories in adjoint
-logic, we obtain it as a corollary.  We have also investigated a simpler
-presentation of the rules of adjoint logic specialized to this mode
-theory, resulting in a typing judgment with three sorts of contexts,
-written $\Gamma \mid \Delta \mid \Xi \vdash e : \tau$.  Here, $\Gamma$
-and $\Delta$ still hold crisp and cohesive variables, respectively, and
-where $\Xi$ contains \emph{shapely} variables, which are constant on the
-connected components of the topological structure.  Crisp variables
-correspond to the modality $\flat$, while shapely variables correspond
-to the modality $\shape$.
+and because cut elimination/normalization holds for all mode theories in
+adjoint logic, we obtain it as a corollary.  We have also investigated a
+simpler presentation of the rules of adjoint logic specialized to this
+mode theory, resulting in a typing judgment with three sorts of
+contexts, written $\Gamma \mid \Delta \mid \Xi \vdash e : \tau$.  Here,
+$\Gamma$ and $\Delta$ still hold crisp and cohesive variables,
+respectively, and where $\Xi$ contains \emph{shapely} variables, which
+are constant on the connected components of the topological structure.
+Crisp variables correspond to the modality $\flat$, while shapely
+variables correspond to the modality $\shape$.
 
 Our second contribution is to extend this to the differential cohesive
 modalities.  We have given a mode theory in adjoint type theory for this
@@ -180,19 +181,18 @@ and again unpacked a nice formulation of the rules of the specialized
 rules.  The result is a judgment $\Gamma \mid \Delta \mid \Theta \mid
 \Lambda \mid \Xi \vdash e : \tau$ that uses six different sorts of
 contexts, corresponding to the modalities $\flat$, $\Red$, identity,
-$\Cored$, and $\shape$ respectively.  The rules for the modalities
-$\Red$, $\Cored$, and $\Wat$ maniupate these contexts in subtle ways,
+$\Cored$, and $\shape$ respectively.  The rules for the types
+$\Red$, $\Cored$, and $\Wat$ manipulate these contexts in subtle ways,
 which express the relationships between the modalities.
 
 In work in progress, we are extending this type theory to dependent
-types. This is not straightforward because of the dependency structure
-of the differential cohesive types. In spatial type
+types, which is not straightforward because of the dependency structure
+of the differential cohesive types.  For example, in spatial type
 theory~\citep{Shulman2015}, cohesive variables can depend on crisp
 variables but not vice versa; but in our reformulation both crisp and
 cohesive variables will also depend on shapely variables, and vice
-versa.  Similar dependency relations arise in the differential case.
-Accouting for this will require a more nuanced view on the dependency
-graph of contexts and types.
+versa.  Accounting for this will require a more nuanced view on the
+dependency graph of contexts and types.
 
 %% To extend the type theory to differential cohesive toposes, we consider
 %% three additional operations, described in the top row of
