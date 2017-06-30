@@ -134,6 +134,8 @@ cohesion, where $\shape$ is not a priori linked to the Dedekind-reals. \FW{Maybe
   refer to what is happening below, i.e. the $\shape$,$\flat$,$\sharp$ modal
   type theory}
 
+
+
 In a different approach, \citet{Licata2017} provide a general purpose
 framework for (non-dependent) modal type theories, called \emph{adjoint type
   theory}, which we can instantiate with the three cohesive operations
@@ -148,6 +150,20 @@ correspond to the modality $\shape$.
 
 \paragraph{Differential cohesion in adjoint type theory.}
 
+\begin{wrapfigure}{R}{0.31\textwidth}
+\vspace{-4mm}
+\begin{center} \begin{tabular}{lll}
+    $\Gamma$ & crisp  &  $\flat$ \\
+    $\Delta$ & reduced & $\Red$ \\
+    $\Theta$ & differentially cohesive & \\
+    $\Lambda$ & coreduced & $\Cored$ \\
+    $\Xi$ & shapely & $\shape$
+\end{tabular} \end{center}
+\caption{Variable usage of the judgment
+  $\Gamma \mid \Delta \mid \Theta \mid \Lambda \mid \Xi \vdash e : \tau$.}
+\label{fig:contexts}
+\end{wrapfigure}
+
 To extend the type theory to differential cohesive toposes, we consider three
 additional operations, described in the top row of \cref{fig:modalities}, in
 addition to the cohesive operations. \citet{Wellen2017} extends HoTT
@@ -159,6 +175,7 @@ differentially cohesive real line, but it is unknown whether that can be defined
 internally to the type theory; in typical models of differential cohesion, the
 Dedekind reals do not correspond to the real line as a smooth space!
 
+
 Our approach is thus to continue with \citet{Licata2017}'s adjoint type theory
 framework to describe the differential operations, instead of
 \citet{Shulman2015}'s more specialized type theory. We extend the typing
@@ -167,8 +184,8 @@ $\Gamma \mid \Delta \mid \Theta \mid \Lambda \mid \Xi \vdash e : \tau$ uses six
 different sorts of contexts, as described in \cref{fig:contexts}. We add the
 modalities $\Red$, $\Cored$, and $\Wat$ to this judgment as inference rules
 following \citeauthor{Licata2017}'s framework. Crucially, because the type
-theory is derived straightforwardly from this framework, we get some
-meta-theoretic results---substitution, structural rules, \etc---for free!
+theory is derived algorithmically from this framework, we get
+meta-theoretic results for substitution and structural rules for free!
 
 % In fact, the type theory for differential cohesion covers not just the three
 % differential modalities, but also the three cohesive modalities. Thus, Shulman's
@@ -182,19 +199,6 @@ meta-theoretic results---substitution, structural rules, \etc---for free!
 % And it is sometimes better, to also implement the monadic modalities by
 % modifying the rules instead of adding axioms.
 
-
-\begin{wrapfigure}{L}{0.31\textwidth}
-\begin{center} \begin{tabular}{lll}
-    $\Gamma$ & crisp  &  $\flat$ \\
-    $\Delta$ & reduced & $\Red$ \\
-    $\Theta$ & differentially cohesive & \\
-    $\Lambda$ & coreduced & $\Cored$ \\
-    $\Xi$ & shapely & $\shape$
-\end{tabular} \end{center}
-\caption{Variable usage of the judgment
-  $\Gamma \mid \Delta \mid \Theta \mid \Lambda \mid \Xi \vdash e : \tau$.}
-\label{fig:contexts}
-\end{wrapfigure}
 
 \paragraph{Where are the homotopies?}
 Future work will extend this type theory to dependent and identity types, but
