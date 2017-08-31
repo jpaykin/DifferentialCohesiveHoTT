@@ -6,10 +6,21 @@ open import Data.Product
 module Simple where
 
 data Type : Set where
-  ∫ ♭ ♯ ℜ ℑ & : Type → Type
+  ∫ -- \int
+  ♭ -- \flat
+  ♯ -- \sharp
+  ℜ -- \Re
+  ℑ -- \Im
+  &
+  : Type → Type
 
 data Zone : Set where
-  C R D I S : Zone
+  C -- crisp aka ♭
+  R -- reduced aka ℜ
+  D -- differential aka identity
+  I -- coreduced aka ℑ
+  S -- shapely aka ∫
+  : Zone
 
 composeZones : Zone → Zone → Zone
 composeZones m D = m
