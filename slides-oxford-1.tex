@@ -1,0 +1,139 @@
+% compile with e.g.:
+% latexmk -pdflatex='xelatex %O %S' -pvc -pdf slides-oxford-1.tex
+\documentclass{beamer}
+% \input{preamble}
+
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{phonetic} % for esh
+\usepackage{enumerate}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+\usepackage{authblk} % For authors' affiliations
+\makeatletter
+\renewcommand\AB@affilsepx{, \protect\Affilfont}
+\makeatother
+
+% Modalities
+\newcommand{\Red}{\Re}
+\newcommand{\Cored}{\Im}
+\newcommand{\Wat}{\&}
+\newcommand{\shape}{\ensuremath{\mathord{\raisebox{0.5pt}{\text{\rm\esh}}}}}
+\newcommand{\submodality}{\rotatebox[origin=c]{90}{$\subset$}}
+
+
+% Latin  Abbr
+\newcommand{\etal}{\emph{et al.}\xspace}
+\newcommand{\eg}{\emph{e.g.,}\xspace}
+\newcommand{\ie}{\emph{i.e.,}\xspace}
+\newcommand{\etc}{\emph{etc.}\xspace}
+
+
+
+\newcommand{\ignore}[1]{}
+\newcommand{\op}{\mathrm{op}} 
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\nat}{\mathbb{N}}
+
+%%%%%%%%%%%%%%
+%% Comments %%
+%%%%%%%%%%%%%%
+\usepackage{draft}
+
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage[capitalize,noabbrev]{cleveref} % must be loaded after hyperref
+
+
+\newnote[Jacob]{JAG}{blue}
+\newnote[Max]{MN}{blue}
+\newnote[Jennifer]{JP}{blue}
+\newnote[Mitchell]{MMR}{blue}
+\newnote[Felix]{FW}{blue}
+\newnote[Dan]{DL}{blue}
+\newnote[Mike]{MS}{blue}
+
+\newnote{fixme}{red}
+\newnote{note1}{red}
+\newnote{todo}{red}
+\newnote[Cite:]{tocite}{red}
+
+
+\title{Differential Cohesive Type Theory \thanks{This
+    material is based upon work supported by the National Science Foundation
+    under Grant Number DMS 1321794.}}
+\author{Jacob A.\,Gross}
+\affil[1]{University of Pittsburgh}
+\author[2]{Daniel R.\,Licata}
+\affil[2]{Wesleyan University}
+\author[3]{Max S.\, New}
+\affil[3]{Northeastern University}
+\author[4]{Jennifer Paykin}
+\affil[4]{University of Pennsylvania}
+\author[2]{Mitchell Riley}
+\author[5]{Michael Shulman}
+\affil[5]{University of San Diego}
+\author[6]{Felix Wellen}
+\affil[6]{Karlsruhe Institute of Technology}
+\date{}
+
+
+\begin{document}
+
+% title page is not working...
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% before this frame, draw a picture
+% indicating the interpretation of HoTT in different toposes
+% and explain, which of them are interesting for the talk and why
+\begin{frame}
+  \frametitle{HoTT as a language for $\infty$-toposes}
+  We are especially interested in the topos $\mathrm{FSGrp}$ of
+  formal smooth $\infty$-groupoids. \\
+  $\mathrm{FSGrp}$ is given as the topos of sheaves on 
+  \[ \{\mathcal C^\op(\R^n)\otimes_\R (\R\oplus V)\mid \text{ $n\in\nat$ and $V$ is nilpotent}\}^\op \]
+  with a topology respecting the smooth structure on the $\R^n$s and ignoring the infinitesimals.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Differential Cohesive Toposes}
+    \begin{tikzpicture}[node distance=2cm]
+      \node (R) {$\Red$};
+      \node[right of=R] (I) {$\Cored$};
+      \node[right of=I] (E) {$\Wat$};
+      \node[below of=I, node distance=1.6cm] (S) {$\shape$};
+      \node[below of=E, node distance=1.6cm] (b) {$\flat$};
+      \node[right of=b] (s) {$\sharp$};
+      
+      \path (R) to node {$\dashv$} (I);
+      \path (I) to node {$\dashv$} (E);
+      \path (S) to node {$\dashv$} (b);
+      \path (b) to node {$\dashv$} (s);
+      
+      \path (I) to node {$\submodality$} (S);
+      \path (E) to node {$\submodality$} (b);
+    \end{tikzpicture}
+  $\Cored$, $\shape$ and $\sharp$ are reflections. \\
+  $\Red$, $\Wat$ and $\flat$ are coreflections.
+\end{frame}
+% explain easy modalities like shape and flat on the whiteboard
+% mention the infinitesimal sierpinski topos 
+% maybe mention SDG and its connection to the differential triple
+
+\begin{frame}
+  \frametitle{Differential Cohesive Type Theory}
+  Easy: The reflections can be added as modalities given by axioms (HoTT-Book 7.7). \\
+  % mention that working with \Cored alone already leads to new theorems in mathematics
+  % mention the theorem from Mike's real cohesion
+  This is not possible for the coreflections -- for them, the rules have to be changed.
+  % mention Mike's real cohesion
+  % stress that it is the goal of the group work to have a similar thing for differential cohesion -- with or without localization
+\end{frame}
+
+\end{document}
