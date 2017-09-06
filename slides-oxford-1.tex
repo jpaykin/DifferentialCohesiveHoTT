@@ -1,9 +1,7 @@
 % compile with e.g.:
 % latexmk -pdflatex='xelatex %O %S' -pvc -pdf slides-oxford-1.tex
 \documentclass{beamer}
-% \input{preamble}
 
-\usepackage{fullpage}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
@@ -13,10 +11,10 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows}
 
-\usepackage{authblk} % For authors' affiliations
-\makeatletter
-\renewcommand\AB@affilsepx{, \protect\Affilfont}
-\makeatother
+%\usepackage{authblk} % For authors' affiliations
+%\makeatletter
+%\renewcommand\AB@affilsepx{, \protect\Affilfont}
+%\makeatother
 
 % Modalities
 \newcommand{\Red}{\Re}
@@ -33,7 +31,6 @@
 \newcommand{\etc}{\emph{etc.}\xspace}
 
 
-
 \newcommand{\ignore}[1]{}
 \newcommand{\op}{\mathrm{op}} 
 \newcommand{\R}{\mathbb{R}}
@@ -47,7 +44,6 @@
 \usepackage{hyperref}
 \usepackage{natbib}
 \usepackage[capitalize,noabbrev]{cleveref} % must be loaded after hyperref
-
 
 \newnote[Jacob]{JAG}{blue}
 \newnote[Max]{MN}{blue}
@@ -66,25 +62,27 @@
 \title{Differential Cohesive Type Theory \thanks{This
     material is based upon work supported by the National Science Foundation
     under Grant Number DMS 1321794.}}
-\author{Jacob A.\,Gross}
-\affil[1]{University of Pittsburgh}
-\author[2]{Daniel R.\,Licata}
-\affil[2]{Wesleyan University}
-\author[3]{Max S.\, New}
-\affil[3]{Northeastern University}
-\author[4]{Jennifer Paykin}
-\affil[4]{University of Pennsylvania}
-\author[2]{Mitchell Riley}
-\author[5]{Michael Shulman}
-\affil[5]{University of San Diego}
-\author[6]{Felix Wellen}
-\affil[6]{Karlsruhe Institute of Technology}
+\institute{
+  \inst{1} University of Pittsburgh \qquad
+  \inst{2} Wesleyan University \and
+  \inst{3} Northeastern University \qquad
+  \inst{4} University of Pennsylvania \and
+  \inst{5} University of San Diego \qquad
+  \inst{6} Karlsruhe Institute of Technology
+}
+\author[shortname]{
+  Jacob A.\,Gross \inst{1} \and 
+  Daniel R.\,Licata \inst{2} \and 
+  Max S.\, New\inst{3} \and
+  Jennifer Paykin\inst{4} \and
+  Mitchell Riley\inst{2} \and
+  Michael Shulman\inst{5} \\ \and
+  Felix Wellen\inst{6}
+}
 \date{}
-
 
 \begin{document}
 
-% title page is not working...
 \begin{frame}
   \titlepage
 \end{frame}
@@ -93,16 +91,21 @@
 % indicating the interpretation of HoTT in different toposes
 % and explain, which of them are interesting for the talk and why
 \begin{frame}
-  \frametitle{HoTT as a language for $\infty$-toposes}
-  We are especially interested in the topos $\mathrm{FSGrp}$ of
-  formal smooth $\infty$-groupoids. \\
-  $\mathrm{FSGrp}$ is given as the topos of sheaves on 
-  \[ \{\mathcal C^\op(\R^n)\otimes_\R (\R\oplus V)\mid \text{ $n\in\nat$ and $V$ is nilpotent}\}^\op \]
-  with a topology respecting the smooth structure on the $\R^n$s and ignoring the infinitesimals.
+  \frametitle{HoTT as a tool for higher differential geometry}
+  There is an embedding:
+  \[ \mathcal C^\infty\colon (\text{smooth manifolds})^\op \hookrightarrow \text{$\R$-algebras}\]
+  \pause
+  We extends the image $\mathcal C^\infty(\{\R^n\mid\text{ $n\in\nat$ }\})$ \\
+  to get the site of \emph{formal cartesian spaces}
+  \[ \{\mathcal C^\op(\R^n)\otimes_\R (\R\oplus V)\mid \text{ $n\in\nat$ and $V$ nilpotent, finite dimensional}\}^\op \]
+  with a topology respecting the smooth structure on the $\R^n$s and ignoring the infinitesimals. \\
+  \pause
+  The sheaves on this site are called \emph{formal smooth $\infty$-groupoids}.
 \end{frame}
 
 \begin{frame}
   \frametitle{Differential Cohesive Toposes}
+  \begin{center}
     \begin{tikzpicture}[node distance=2cm]
       \node (R) {$\Red$};
       \node[right of=R] (I) {$\Cored$};
@@ -119,6 +122,7 @@
       \path (I) to node {$\submodality$} (S);
       \path (E) to node {$\submodality$} (b);
     \end{tikzpicture}
+  \end{center}
   $\Cored$, $\shape$ and $\sharp$ are reflections. \\
   $\Red$, $\Wat$ and $\flat$ are coreflections.
 \end{frame}
@@ -130,7 +134,7 @@
   \frametitle{Differential Cohesive Type Theory}
   Easy: The reflections can be added as modalities given by axioms (HoTT-Book 7.7). \\
   % mention that working with \Cored alone already leads to new theorems in mathematics
-  % mention the theorem from Mike's real cohesion
+  % mention the no-go-theorem from Mike's real cohesion
   This is not possible for the coreflections -- for them, the rules have to be changed.
   % mention Mike's real cohesion
   % stress that it is the goal of the group work to have a similar thing for differential cohesion -- with or without localization
