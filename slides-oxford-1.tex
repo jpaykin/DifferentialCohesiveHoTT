@@ -25,10 +25,10 @@
 \newcommand{\ie}{\emph{i.e.,}\xspace}
 \newcommand{\etc}{\emph{etc.}\xspace}
 
-
 \newcommand{\ignore}[1]{}
 \newcommand{\op}{\mathrm{op}} 
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\D}{\mathbb{D}}
 \newcommand{\nat}{\mathbb{N}}
 
 %%%%%%%%%%%%%%
@@ -79,22 +79,11 @@
   \titlepage
 \end{frame}
 
+
 % before this frame, draw a picture
 % indicating the interpretation of HoTT in different toposes
 % and explain, which of them are interesting for the talk and why
-\begin{frame}
-  \frametitle{HoTT as a tool for higher differential geometry}
-  There is an embedding:
-  \[ \mathcal C^\infty\colon (\text{smooth manifolds})^\op \hookrightarrow \text{$\R$-algebras}\]
-  \pause
-  We extends the image $\mathcal C^\infty(\{\R^n\mid\text{ $n\in\nat$ }\})$ \\
-  to get the site of \emph{formal cartesian spaces}
-  \[ \{\mathcal C^\op(\R^n)\otimes_\R (\R\oplus V)\mid \text{ $n\in\nat$ and $V$ nilpotent, finite dimensional}\}^\op \]
-  with a topology respecting the smooth structure on the $\R^n$s and ignoring the infinitesimals. \\
-  \pause
-  The sheaves on this site are called \emph{formal smooth $\infty$-groupoids}.
-\end{frame}
-
+% make a distinction between differential, cohesive and differential cohesive toposes
 \begin{frame}
   \frametitle{Differential Cohesive Toposes}
   \begin{center}
@@ -116,11 +105,31 @@
     \end{tikzpicture}
   \end{center}
   $\Cored$, $\shape$ and $\sharp$ are reflections. \\
-  $\Red$, $\Wat$ and $\flat$ are coreflections.
+  $\Red$, $\Wat$ and $\flat$ are coreflections. \\
+  $\shape$ and $\Red$ preserve finite products.
 \end{frame}
 % explain easy modalities like shape and flat on the whiteboard
 % mention the infinitesimal sierpinski topos 
 % maybe mention SDG and its connection to the differential triple
+
+\begin{frame}
+  \frametitle{HoTT as a tool for higher differential geometry}
+  There is an embedding:
+  \[ \mathcal C^\infty\colon (\text{smooth manifolds})^\op \hookrightarrow \text{$\R$-algebras}\]
+  \pause
+  We extends the image $\mathcal C^\infty(\{\R^n\mid\text{ $n\in\nat$ }\})$ \\
+  to get the site of \emph{formal cartesian spaces}
+  \[ \{\underbrace{\mathcal C^\op(\R^n)\otimes_\R (\R\oplus V)}_{=:(\R^n\times\D)^\op}\mid \text{$n\in\nat$ and $V$ nilpotent, $\dim V<\infty$}\}^\op \]
+  
+  with a topology respecting the smooth structure on the $\R^n$s and ignoring the infinitesimals. \\
+  \pause
+  The sheaves on this site are called \emph{formal smooth $\infty$-groupoids}.
+  \pause
+  On representables $\Red$ is given by reduction of $\R$-algebras:
+  \[ \Red(\R^n\times\D)=\R^n \]
+\end{frame}
+% explain the differential triple induced by this reduction
+% and comment on its history and importance in pure mathematics
 
 \begin{frame}
   \frametitle{Differential Cohesive Type Theory}
