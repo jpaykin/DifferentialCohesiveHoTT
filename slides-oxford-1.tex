@@ -113,32 +113,30 @@
 % maybe mention SDG and its connection to the differential triple
 
 \begin{frame}
-  \frametitle{HoTT as a tool for higher differential geometry}
+  \frametitle{A differential cohesive topos for differential geometry}
+  \pause
   There is an embedding:
   \[ \mathcal C^\infty\colon (\text{smooth manifolds})^\op \hookrightarrow \text{$\R$-algebras}\]
   \pause
   We extends the image $\mathcal C^\infty(\{\R^n\mid\text{ $n\in\nat$ }\})$ \\
+  \pause
   to get the site of \emph{formal cartesian spaces}
-  \[ \{\underbrace{\mathcal C^\op(\R^n)\otimes_\R (\R\oplus V)}_{=:(\R^n\times\D)^\op}\mid \text{$n\in\nat$ and $V$ nilpotent, $\dim V<\infty$}\}^\op \]
-  
+  \[ \{\underbrace{\mathcal C^\infty(\R^n)\otimes_\R (\R\oplus V)}_{=:(\R^n\times\D_V)^\op}\mid \text{$n\in\nat$ and $V$ nilpotent, $\dim_\R V<\infty$}\}^\op \]
+  \pause
   with a topology respecting the smooth structure on the $\R^n$s and ignoring the infinitesimals. \\
   \pause
   The sheaves on this site are called \emph{formal smooth $\infty$-groupoids}.
   \pause
   On representables $\Red$ is given by reduction of $\R$-algebras:
-  \[ \Red(\R^n\times\D)=\R^n \]
+  \[ \Red(\R^n\times\D_V)=\R^n \]
 \end{frame}
 % explain the differential triple induced by this reduction
 % and comment on its history and importance in pure mathematics
 
-\begin{frame}
-  \frametitle{Differential Cohesive Type Theory}
-  Easy: The reflections can be added as modalities given by axioms (HoTT-Book 7.7). \\
-  % mention that working with \Cored alone already leads to new theorems in mathematics
-  % mention the no-go-theorem from Mike's real cohesion
-  This is not possible for the coreflections -- for them, the rules have to be changed.
-  % mention Mike's real cohesion
-  % stress that it is the goal of the group work to have a similar thing for differential cohesion -- with or without localization
-\end{frame}
+% mention that working with \Cored alone already leads to new theorems in mathematics
+% show how one can work with the coreduction
+% maybe mention the no-go-theorem from Mike's real cohesion
+% mention Mike's real cohesion
+% stress that it is the goal of the group work to have a similar thing for differential cohesion -- with or without localization
 
 \end{document}
