@@ -1,55 +1,6 @@
 \documentclass[a4paper,12pt]{article}
 
-\usepackage[lmargin=2.5cm,rmargin=2.5cm,tmargin=2.5cm,bmargin=2.5cm]{geometry}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{phonetic} % for esh
-\usepackage{enumerate}
-\usepackage{pbox}
-\usepackage{graphicx}
-\usepackage{cleveref}
-
-\usepackage{tikz}
-\usetikzlibrary{cd}
-\usetikzlibrary{arrows}
-
-\usepackage{mathpartir}
-\newcommand{\yields}{\vdash}
-\newcommand{\cbar}{\, | \,}
-
-
-\newcommand{\flatletin}[3]{\mathsf{ let } \,\, #1^\flat := #2 \,\,  \mathsf{ in } \,\, #3}
-\newcommand{\shapeletin}[3]{\mathsf{ let } \,\, #1^{\shape} := #2 \,\,  \mathsf{ in } \,\, #3}
-\newcommand{\crispflatind}[3]{\mathsf{ let } \,\, #1^\flat :::= #2 \,\,  \mathsf{ in } \,\, #3}
-\newcommand{\coredflatind}[3]{\mathsf{ let } \,\, #1^\flat ::= #2 \,\, \mathsf{ in } \,\, #3}
-
-\newcommand{\redind}[4]{\mathsf{ let } \,\, #1^\Red :_#2 = #3 \,\, \mathsf{ in } \,\, #4}
-\newcommand{\coredind}[4]{\mathsf{ let } \,\, #1^\Cored :_#2 = #3 \,\, \mathsf{ in } \,\, #4}
-\newcommand{\shapeind}[4]{\mathsf{ let } \,\, #1^\shape :_#2 = #3 \,\, \mathsf{ in } \,\, #4}
-\newcommand{\flatind}[4]{\mathsf{ let } \,\, #1^\Red :_#2 = #3 \,\, \mathsf{ in } \,\, #4}
-
-
-
-\newcommand{\Type}{\mathsf{Type}}
-\newcommand{\Id}[3]{\mathsf{Id}_{{#1}}(#2,#3)}
-\newcommand{\ctx}{\,\,\mathsf{ctx}}
-\newcommand{\tele}{\,\,\mathsf{tele}}
-\newcommand{\type}{\,\,\mathsf{type}}
-
-\usepackage{enumitem}
-\setitemize{topsep=0pt,itemsep=0ex,partopsep=1ex,parsep=1ex}
-\setenumerate{topsep=0pt,itemsep=1ex,partopsep=1ex,parsep=1ex}
-
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Red}{\Re}
-\newcommand{\Cored}{\Im}
-\newcommand{\Wat}{\&}
-\newcommand{\shape}{\ensuremath{\mathord{\raisebox{0.5pt}{\text{\rm\esh}}}}}
-\newcommand{\rotdel}{\rotatebox[origin=c]{180}{$\delta$}}
-\newcommand{\unshape}{\text{un}\shape}
-
-
+\include{common}
 \begin{document}
 
 \pagestyle{myheadings}
